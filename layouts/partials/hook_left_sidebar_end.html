@@ -1,6 +1,6 @@
 {{ if getenv "LAST_COMMIT" -}}
 <ul class="toc-footer">
-  <li>Last updated: {{ getenv "LAST_UPDATED" }}</li>
+  <li>{{ T "last_updated" }}: {{ getenv "LAST_UPDATED" }}</li>
   <li><em><a href="{{ getenv "REPO_URL" }}">{{ getenv "LAST_COMMIT" }}</a></em></li>
 </ul>
 {{ end }}
