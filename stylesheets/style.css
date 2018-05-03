@@ -1,0 +1,13 @@
+.sidebar-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin: 8px;
+}
+
+@media print {
+    .sidebar-title {
+        font-size: 36px;
+    }
+}
