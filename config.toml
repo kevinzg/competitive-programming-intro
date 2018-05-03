@@ -2,3 +2,39 @@ baseURL = "http://kevinzg.github.io/competitive-programming-guide/"
 languageCode = "es"
 title = "Guía de programación competitiva"
 theme = "docuapi"
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuessSyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+pygmentsUseClasses = true
+
+defaultContentLanguage = "es"
+
+[params]
+search = false
+
+# Configure the language example tabs.
+[[params.language_tabs]]
+key = "python"
+name = "Python 3"
+[[params.language_tabs]]
+key = "cpp"
+name = "C++11"
+
+# Languages
+[languages]
+
+[languages.es]
+languageName = "Español"
+weight = 2
+title = "Guía de programación competitiva"
+
+# Left sidebar footer items. Use HTMl or Markdown.
+toc_footers = [
+]
+
+[languages.es.blackfriday]
+angledQuotes = false
+hrefTargetBlank = true
