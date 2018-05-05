@@ -6,6 +6,24 @@
     margin: 8px;
 }
 
+.content h2 {
+    border-top: unset;
+    background-image: unset;
+    margin-top: 0em;
+}
+
+.content h3, .content h4, .content h5, .content h6 {
+    margin-top: 0em;
+}
+
+.content>h2,.content>div {
+    clear: unset;
+}
+
+.content>h1 {
+    clear: both;
+}
+
 @media print {
     .sidebar-title {
         font-size: 36px;
