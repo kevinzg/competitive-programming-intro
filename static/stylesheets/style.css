@@ -26,6 +26,14 @@
     clear: both;
 }
 
+.content pre, .content blockquote {
+    padding: 1em 28px;
+}
+
+.content blockquote {
+    font-family: monospace;
+}
+
 @media print {
     .sidebar-title {
         font-size: 36px;
