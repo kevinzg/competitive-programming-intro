@@ -105,3 +105,4 @@ Los lenguajes de programación que usaré en esta guía son Python 3 y C++11. El
 
 Listo esos lenguajes porque son los permitidos en los concursos del ACM-ICPC. El ICPC es el concurso de programación más importante y más adelante escribiré de él. Si quieres saber más sobre el ambiente de programación del ICPC (software instalado, versiones de los lenguajes, flags de compilación, etc.) revisa [estas reglas](https://icpc.baylor.edu/worldfinals/programming-environment).
 
+Ahora estamos listos para resolver nuestro primer problema.
