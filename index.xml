@@ -12,13 +12,67 @@
     
     <item>
       <title>Introduction</title>
-      <link>http://kevinzg.github.io/competitive-programming-guide/main/</link>
+      <link>http://kevinzg.github.io/competitive-programming-guide/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kevinzg.github.io/competitive-programming-guide/main/</guid>
-      <description> Lorem ipsum Voluptatibus quidem est molestiae consequatur optio occaecati possimus et. Perspiciatis corporis ullam suscipit ea sint incidunt optio. Nihil ea dolores sequi. Exercitationem tempora quia consequuntur vel doloribus ducimus et. Voluptatem perferendis mollitia iste error enim similique quod. Et quaerat velit sit ea.
-#include &amp;lt;iostream&amp;gt;int main() { std::cout &amp;lt;&amp;lt; &amp;#34;Hello World!&amp;#34; &amp;lt;&amp;lt; std::endl; } print(&amp;#39;Hello World!&amp;#39;)  Hello World!
- </description>
+      <guid>http://kevinzg.github.io/competitive-programming-guide/intro/</guid>
+      <description>Introducción ¿Qué es esto de programación competitiva? ICPC Photo by icpc.baylor.edu (CC BY 3.0)   La programación competitiva es un deporte mental donde los competidores tienen que escribir programas para resolver varios problemas lo más rápido posible.
+Los problemas son problemas conocidos de ciencia de la computación, y por conocidos quiero decir que ya tienen solución. Por lo menos el creador de los problemas (o problem setter) los ha resuelto.</description>
+    </item>
+    
+    <item>
+      <title>Problems</title>
+      <link>http://kevinzg.github.io/competitive-programming-guide/problems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kevinzg.github.io/competitive-programming-guide/problems/</guid>
+      <description>Problemas Vamos a resolver nuestro primer problema, el problema 4A de Codeforces, Watermelon.
+Los problemas tienen 4 partes: enunciado, entrada, salida, y ejemplos.
+ El enunciado es el texto donde describen el problema. Generalmente tiene una historia introductoria, y seguido la definición, probablemente implícita, del problema en sí. La entrada es la descripción de cómo se presentarán los datos en el archivo de entrada (stdin). También suele contener las restricciones de las variables de entrada.</description>
+    </item>
+    
+    <item>
+      <title>Online Judges</title>
+      <link>http://kevinzg.github.io/competitive-programming-guide/judges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kevinzg.github.io/competitive-programming-guide/judges/</guid>
+      <description>Jueces en línea Los jueces en línea (o online judges) son sitios web donde puedes encontrar problemas para resolver y enviar tus soluciones.
+Hay una gran cantidad de online judges, pero voy a ir listando los que vamos a ir usando.
+Codeforces Codeforces es un juez ruso que aparte de tener una gran variedad de problemas realiza contests en línea con problemas nuevos de forma seguida. Luego de que terminan los contests publican una editorial con la solución a los problemas.</description>
+    </item>
+    
+    <item>
+      <title>Input/Output</title>
+      <link>http://kevinzg.github.io/competitive-programming-guide/io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kevinzg.github.io/competitive-programming-guide/io/</guid>
+      <description>Entrada y salida Los programas que escribas tienen 3 archivos especiales a los que pueden acceder: stdin (lectura), stdout (escritura) y stderr (escritura de errores).
+Cuando ejecutas tu programa en la terminal, el shell (el intérprete de la línea de comando) asigna el archivo stdin a la entrada de teclado, y stdout y stderr a la salida de la terminal. Eso quiere decir que lo que escribas en la terminal podrá ser leído por tu programa desde el archivo stdin y lo que imprima al archivo stdout lo podrás ver en tu pantalla.</description>
+    </item>
+    
+    <item>
+      <title>Addendum</title>
+      <link>http://kevinzg.github.io/competitive-programming-guide/addendum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kevinzg.github.io/competitive-programming-guide/addendum/</guid>
+      <description>Anexos Tutoriales de programación Python El tutorial oficial de Python es bastante bueno y vale la pena leerlo. También está la versión en español de Python Argentina.
+Si ya conoces otros lenguajes de programación y quieres aprender Python te recomiendo que leas estos enlaces:
+ Transforming Code into Beautiful, Idiomatic Python Learn Python 3 in Y Minutes  Si Python es tu primer lenguaje de programación estos libros son buenos:</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://kevinzg.github.io/competitive-programming-guide/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kevinzg.github.io/competitive-programming-guide/about/</guid>
+      <description>Acerca de esta guía Esta guía se continúa escribiendo y espero que algún día llegue a estar casi terminada y pueda ser de ayuda a los nuevos estudiantes que .
+Si encuentras algún error, o crees que haya algo que se pueda mejorar puedes dejar un issue en el repositorio. Pull requests también son bienvenidos.
+kevinz
+Licencia Esta obra está bajo una licencia de Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.</description>
     </item>
     
   </channel>

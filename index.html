@@ -45,8 +45,8 @@
          
         
         <ul class="toc-footer">
-  <li>Última actualización: 2018-05-03 17:34</li>
-  <li><em><a href="https://github.com/kevinzg/competitive-programming-guide">0bc33f6</a></em></li>
+  <li>Última actualización: 2018-05-05 09:06</li>
+  <li><em><a href="https://github.com/kevinzg/competitive-programming-guide">94c412a</a></em></li>
 </ul>
 
 
@@ -58,15 +58,343 @@
     
         
 
-<h1 id="lorem-ipsum">Lorem ipsum</h1>
+<h1 id="introducción">Introducción</h1>
 
-<p>Voluptatibus quidem est molestiae consequatur optio occaecati possimus et. Perspiciatis corporis ullam suscipit ea sint incidunt optio. Nihil ea dolores sequi. Exercitationem tempora quia consequuntur vel doloribus ducimus et. Voluptatem perferendis mollitia iste error enim similique quod. Et quaerat velit sit ea.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span></code></pre></div>
-<blockquote>
-<p>Hello World!</p>
+<h2 id="qué-es-esto-de-programación-competitiva">¿Qué es esto de programación competitiva?</h2>
+
+<!-- Temporal hack while I figure out hugo/template's css -->
+
+<blockquote style="text-align: center; font-family: unset;">
+  <img src="images/acm-icpc-wf-2018.jpg" title="ACM-ICPC World Finals 2018"/>
+  <small>ICPC Photo by <a href="//icpc.baylor.edu">icpc.baylor.edu</a> (CC BY 3.0) </small>
 </blockquote>
+
+<p>La programación competitiva es un deporte mental donde los competidores tienen que escribir programas para resolver varios problemas lo más rápido posible.</p>
+
+<p>Los problemas son problemas conocidos de ciencia de la computación, y por conocidos quiero decir que ya tienen solución. Por lo menos el creador de los problemas (o <em>problem setter</em>) los ha resuelto.</p>
+
+<p>Resolver un problema significa escribir un programa que lea unos datos de entrada (<em>input</em>) y produzca unos datos de salida (<em>output</em>) según la descripción del problema. Una vez se haya resuelto un problema este será enviado a un juez (<em>judge</em>) para su revisión. El juez probará el programa con varios casos de prueba y revisará si la salida es igual a la salida dada por el problem setter. Finalmente el juez le responderá al competidor que envió el programa si su solución es correcta o no.</p>
+
+<p>Quién resuelva la mayor cantidad de problemas en el menor tiempo posible gana.</p>
+
+<h2 id="y-por-qué-debería-competir-o-entrenar">¿Y por qué debería competir o entrenar?</h2>
+
+<p>Hay bastantes beneficios de practicar la programación competitiva, por ejemplo:</p>
+
+<ul>
+<li>Aprenderás varios algoritmos y estructuras de datos.</li>
+<li>Programarás de forma más rápida y eficiente.</li>
+<li>Las clases de la universidad te serán más fáciles.</li>
+<li>Llevarás tus capacidades al límite.</li>
+<li>Tendrás la oportunidad de viajar para concursar.</li>
+<li>Mejorarás tu compresión de lectura en inglés.</li>
+<li>Las entrevistas de trabajo serán pan comido.</li>
+</ul>
+
+<p>Y hay muchas más razones, sin olvidar por supuesto que es bastante entretenido.</p>
+
+<h2 id="muy-bien-hay-algún-pre-requisito">Muy bien, ¿hay algún pre-requisito?</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">my_pow</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">p</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span></code></pre></div>
+<p>Hay algunos requisitos básicos:</p>
+
+<ul>
+<li>Saber inglés (por lo menos lo necesario para entender los problemas).</li>
+<li>Saber programación básica.</li>
+<li>Tener el deseo de aprender.</li>
+</ul>
+
+<p>En esta guía te enseñaré algunos conceptos de programación, pero ya deberías entender lo que son variables, tipos de datos, operadores, estructuras de control de flujo (<em>if</em>, <em>else</em>, <em>for</em>, <em>while</em>, etc.), funciones, arreglos, entrada y salida, módulos (<em>import</em>, <em>include</em>), clases o estructuras, etc.</p>
+
+<p>Si todavía no conoces todos esos conceptos no hay problema, puedes ir revisando <a href="#tutoriales-de-programación">tutoriales de programación</a> en el camino, por ahora entender el código de la derecha debería ser suficiente.</p>
+
+<p>Ahora sobre los lenguajes de programación.</p>
+
+<h2 id="lenguajes-de-programación">Lenguajes de programación</h2>
+
+<p>Los lenguajes de programación que usaré en esta guía son Python 3 y C++11. Elegí estos lenguajes porque Python suele ser el primer lenguaje que te enseñan, y C++ es probablemente el lenguaje más usado en el mundo de la programación competitiva. Si gustas usar otro lenguaje te recomiendo escoger uno de estos:</p>
+
+<ul>
+<li>Java</li>
+<li>C</li>
+<li>C++</li>
+<li>Python 2</li>
+<li>Python 3</li>
+<li>Kotlin</li>
+</ul>
+
+<p>Listo esos lenguajes porque son los permitidos en los concursos del ACM-ICPC. El ICPC es el concurso de programación más importante y más adelante escribiré de él. Si quieres saber más sobre el ambiente de programación del ICPC (software instalado, versiones de los lenguajes, flags de compilación, etc.) revisa <a href="https://icpc.baylor.edu/worldfinals/programming-environment" target="_blank">estas reglas</a>.</p>
+
+<p>Ahora estamos listos para resolver nuestro primer problema.</p>
+
+    
+        
+
+<h1 id="problemas">Problemas</h1>
+
+<p>Vamos a resolver nuestro primer problema, el problema 4A de Codeforces, <a href="http://codeforces.com/problemset/problem/4/A" target="_blank">Watermelon</a>.</p>
+
+<p>Los problemas tienen 4 partes: enunciado, entrada, salida, y ejemplos.</p>
+
+<ul>
+<li>El <strong>enunciado</strong> es el texto donde describen el problema. Generalmente tiene una historia introductoria, y seguido la definición, probablemente implícita, del problema en sí.</li>
+<li>La <strong>entrada</strong> es la descripción de cómo se presentarán los datos en el archivo de entrada (<em>stdin</em>). También suele contener las restricciones de las variables de entrada.</li>
+<li>La <strong>salida</strong> es la descripción de cómo se debe imprimir la respuesta del problema al archivo de salida (<em>stdout</em>).</li>
+<li>Los <strong>ejemplos</strong> son casos de prueba dados por el <em>problem setter</em> para entender mejor el problema.</li>
+</ul>
+
+<p>Los problemas también suelen tener el tiempo límite y el límite de memoria para resolver el problema, es decir, nuestro programa no puede demorarse más de ese tiempo ni usar más memoria de la indicada.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">w</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">w</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;YES&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;NO&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;YES&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;NO&#39;</span><span class="p">)</span></code></pre></div>
+<p>Lee el problema <a href="http://codeforces.com/problemset/problem/4/A" target="_blank">Watermelon</a> y trata de resolverlo en tu lenguaje favorito. La solución debería verse como el código de la derecha. Una vez hayas terminado tu código envíalo al juez para que lo pruebe (tienes que registrarte primero).</p>
+
+<p>El juez te dirá si tu código está bien (<em>Accepted</em>) o no. Listaré algunos de los problemas comunes por los que tu programa podría fallar:</p>
+
+<ul>
+<li>No imprimas nada más que la respuesta. Si estás imprimiendo algo como &ldquo;Ingrese el valor w:&ldquo;, o &ldquo;La respuesta es:&rdquo; el juez lo tomará como una solución errónea.</li>
+<li>Las mayúsculas son diferentes a las minúsculas. Revisa la descripción del problema y observa cuál es el formato exacto en que debes imprimir la respuesta.</li>
+<li>Si estás imprimiendo en el formato correcto y el código sigue mal debe haber un error en la lógica del programa. Vuelve a leer el problema y revisa si tu código está realmente haciendo lo que pide.</li>
+<li>Prueba casos de prueba extremos, es decir muy pequeños y muy grandes, a veces los errores se suelen esconder ahí.</li>
+</ul>
+
+<p>¡Enhorabuena! Ya has debido resolver tu primer problema. Si quieres resolver más <a href="http://codeforces.com/problemset?order=BY_SOLVED_DESC" target="_blank">esta es una lista de los problemas en orden de dificultad</a>.</p>
+
+<h2 id="respuestas-del-juez">Respuestas del juez</h2>
+
+<p>Estas son unas de las respuestas que el juez les puede dar sobre su solución:</p>
+
+<ul>
+<li><strong>Accepted (AC)</strong>. Tu programa es correcto y está dentro del límite de tiempo y memoria. Felicidades.</li>
+<li><strong>Presentation Error (PE)</strong>. Tu programa imprimió la respuesta correcta pero en un formato equivocado. Revisa espacios en blanco y saltos de línea.</li>
+<li><strong>Wrong Answer (WA)</strong>. Tu programa se ejecutó correctamente, pero la solución es incorrecta. Revisa tu código y el problema nuevamente.</li>
+<li><strong>Compilation Error (CE)</strong>. Tu programa no pudo ser compilado. Generalmente también te dicen el error de compilación. Las advertencias no causan efecto alguno.</li>
+<li><strong>Runtime Error (RE)</strong>. Tu programa <em>crasheó</em>. Normalmente esto pasa cuando se lanza una excepción y no la atrapas. Revisa que no estés accediendo a memoria que no te pertenece o errores de división entre cero.</li>
+<li><strong>Time Limit Exceeded (TLE)</strong>. Tu programa se demoró mucho y el juez ya no pudo esperarlo. Esto significa que tienes que optimizar tu código o tu algoritmo.</li>
+<li><strong>Memory Limit Exceeded (MLE)</strong>. Tu programa intentó alojar más memoria de la permitida.</li>
+<li><strong>Output Limit Exceeded (OLE)</strong>. Tu programa está imprimiendo demasiado. La causa podría ser un bucle infinito al momento de imprimir el resultado.</li>
+<li><strong>Restricted Function (RF)</strong>. Tu programa quiso acceder a funcionalidad restringida, como funciones del sistema operativo.</li>
+<li><strong>Submission Error (SE)</strong>. Hubo algún problema al momento de subir el programa. Las causas pueden ser que te faltó seleccionar el problema o poner tu id de usuario o algún otro campo.</li>
+</ul>
+
+    
+        
+
+<h1 id="jueces-en-línea">Jueces en línea</h1>
+
+<p>Los jueces en línea (o <em>online judges</em>) son sitios web donde puedes encontrar problemas para resolver y enviar tus soluciones.</p>
+
+<p>Hay una gran cantidad de online judges, pero voy a ir listando los que vamos a ir usando.</p>
+
+<h2 id="codeforces">Codeforces</h2>
+
+<p><a href="http://codeforces.com/" target="_blank">Codeforces</a> es un juez ruso que aparte de tener una gran variedad de problemas realiza contests en línea con problemas nuevos de forma seguida. Luego de que terminan los contests publican una editorial con la solución a los problemas. También te permite ver el código de los demás usuarios y (parcialmente) los casos de prueba de los problemas. Por eso este juez es uno de los mejores para aprender.</p>
+
+<h2 id="a-sup-2-sup-online-judge">A<sup>2</sup> Online Judge</h2>
+
+<p><a href="https://a2oj.com/" target="_blank">A<sup>2</sup> OJ</a>, también conocido como Ahmed Aly, su creador, no solo tiene problemas para resolver, sino también permite crear contests en línea con problemas de muchos otros jueces para entrenar. También tiene una <a href="https://a2oj.com/categories" target="_blank">muy útil lista</a> de problemas por categoría.</p>
+
+    
+        
+
+<h1 id="entrada-y-salida">Entrada y salida</h1>
+
+<p>Los programas que escribas tienen 3 archivos especiales a los que pueden acceder: <code>stdin</code> (lectura), <code>stdout</code> (escritura) y <code>stderr</code> (escritura de errores).</p>
+
+<p>Cuando ejecutas tu programa en la terminal, el <code>shell</code> (el intérprete de la línea de comando) asigna el archivo <code>stdin</code> a la entrada de teclado, y <code>stdout</code> y <code>stderr</code> a la salida de la terminal. Eso quiere decir que lo que escribas en la terminal podrá ser leído por tu programa desde el archivo <code>stdin</code> y lo que imprima al archivo <code>stdout</code> lo podrás ver en tu pantalla. <code>stderr</code> también imprimirá a la pantalla, pero luego veremos cuál es la diferencia con <code>stdin</code>.</p>
+
+<h2 id="entrada">Entrada</h2>
+
+<blockquote>
+<p>10 20 30</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">a</span><span class="p">;</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span> <span class="kt">float</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">abc</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span></code></pre></div>
+<p>Para leer de <code>stdin</code> en Python 3 usamos la función <code>input()</code>. La función <code>input()</code> lee una línea completa, es decir hasta encontrar un salto de línea (<code>\n</code>) y devuelve la línea como un string (sin incluir el salto de línea).</p>
+
+<p>En C++ se utiliza un objeto global llamado <code>std::cin</code> que se encuentra en el header <code>iostream</code>. Este objeto define al operador <code>&gt;&gt;</code> (que en este contexto significa <em>extraer</em>) y necesita de una variable donde guardar lo extraído. A diferencia de Python, <code>std::cin</code> ignora los espacios en blanco e intenta extraer de <code>stdin</code> un string que se pueda convertir al tipo de dato de la variable con que se esté operando.</p>
+
+<p>Consideren el siguiente ejemplo. La entrada es <code>10 20 30</code>. En el caso de Python la variable <code>abc</code> tendrá toda la línea, es decir el string <code>10 20 30</code>.
+En el caso de C++ el string <code>a</code> tendrá como valor el string <code>10</code>, el entero <code>b</code> será el entero 20, y el flotante <code>c</code> será el flotante 30.0. Es decir C++ usa a los espacios en blancos como separadores y convierte al string al tipo de dato de la variable donde se extrae.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">abc</span><span class="p">;</span>
+    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">abc</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></code></pre></div>
+<p>Entonces ¿cómo podemos asignar la entrada a tres variables distintas en Python?, el método split de un string divide al string en una lista de strings según el delimitador que especifiquemos, si no especificamos uno utilizará los espacios en blanco. Como sabemos el número de variables en la lista podemos usar esta sintaxis para desempacar la lista. Los valores de la lista siguen siendo strings, y por eso tendremos que convertirlos a enteros o flotantes según deseemos. ¿Y cómo podemos leer la línea completa en C++? Para eso utilizamos la función global <code>std::getline</code> del header <code>string</code>. <code>getline</code> recibe un objecto del mismo tipo de <code>cin</code>, o sea podemos pasarle <code>cin</code>, y un string donde almacenar lo leído.</p>
+
+<h2 id="salida">Salida</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">30</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span></code></pre></div>
+<blockquote>
+<p>10 20 30</p>
+</blockquote>
+
+<p>Para imprimir a <code>stdout</code> en Python 3 usamos la función <code>print()</code>. La función <code>print()</code> recibe una variable, la convierte a un string y la imprime seguida de un salto de línea.</p>
+
+<p>En C++ se utiliza otro objeto global llamado <code>std::cout</code> que se encuentra en el header <code>iostream</code>. Este objeto define al operador <code>&lt;&lt;</code> (que en este contexto significa <em>introducir</em>) y necesita de la variable que se va a imprimir. A diferencia de Python, <code>std::cout</code> no imprime un salto de línea y tendremos que hacerlo manualmente.</p>
+
+<p>Consideren el siguiente ejemplo. La salida requerida es <code>10 20 30\n</code>. En el caso de Python la función <code>print</code> recibe un parámetro opcional llamado <code>end</code> que es un string con el cual termina la impresión, para imprimir un espacio al final tenemos que pasarle <code>end=' '</code>, o sea, un string con un solo espacio.
+En el caso de C++ para imprimir el salto de línea deberemos imprimir manualmente el carácter <code>'\n'</code>, el string <code>&quot;\n&quot;</code>, o podemos usar otro objeto global llamado <code>std::endl</code>.</p>
+
+    
+        
+
+<h1 id="anexos">Anexos</h1>
+
+<h2 id="tutoriales-de-programación">Tutoriales de programación</h2>
+
+<h3 id="python">Python</h3>
+
+<p>El <a href="https://docs.python.org/3/tutorial/index.html" target="_blank">tutorial oficial de Python</a> es bastante bueno y vale la pena leerlo. También está la <a href="http://docs.python.org.ar/tutorial/3/index.html" target="_blank">versión en español</a> de Python Argentina.</p>
+
+<p>Si ya conoces otros lenguajes de programación y quieres aprender Python te recomiendo que leas estos enlaces:</p>
+
+<ul>
+<li><a href="https://github.com/JeffPaine/beautiful_idiomatic_python" target="_blank">Transforming Code into Beautiful, Idiomatic Python</a></li>
+<li><a href="https://learnxinyminutes.com/docs/python3/" target="_blank">Learn Python 3 in Y Minutes</a></li>
+</ul>
+
+<p>Si Python es tu primer lenguaje de programación estos libros son buenos:</p>
+
+<ul>
+<li><a href="http://introtopython.org/" target="_blank">Introduction to Python</a></li>
+<li><a href="http://greenteapress.com/wp/think-python-2e/" target="_blank">Think Python: How to Think Like a Computer Scientist</a></li>
+<li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+<li><a href="http://inventwithpython.com/cracking/" target="_blank">Cracking Codes with Python</a></li>
+</ul>
+
+<p>Si quieres ver más recursos chequea estás listas:</p>
+
+<ul>
+<li><a href="http://www.python.org.ar/wiki/AprendiendoPython" target="_blank">Aprendiendo Python</a> de Python Argentina.</li>
+<li><a href="https://wiki.python.org/moin/SpanishLanguage" target="_blank">Recursos en español</a> de la wiki oficial de Python.</li>
+<li><a href="https://www.reddit.com/r/learnpython/wiki/index#wiki_new_to_python.3F" target="_blank">Wiki</a>  de r/learnpython.</li>
+<li><a href="https://wiki.python.org/moin/BeginnersGuide/Programmers" target="_blank">Recursos en inglés</a> de la wiki oficial de Python.</li>
+</ul>
+
+<p>Pero ten en cuenta que algunos de esos recursos son bastante antiguos, por lo menos escoge un libro o tutorial que enseñe Python 3. <a href="https://wiki.python.org/moin/Python2orPython3" target="_blank">Ya no es recomendado usar Python 2</a>.</p>
+
+<h3 id="c">C++</h3>
+
+<p>Para aprender C++ no puedo recomendar ninguno de los tutoriales en línea que se encuentran por ahí. Lo mejor es aprender de un libro.</p>
+
+<p>Si no tienes experiencia de programación te recomiendo uno de estos:</p>
+
+<ul>
+<li><a href="https://www.pearson.com/us/higher-education/program/Lippman-C-Primer-5th-Edition/PGM270560.html" target="_blank">C++ Primer, 5th edition</a></li>
+<li><a href="http://www.stroustrup.com/programming.html" target="_blank">Programming &ndash; Principles and Practice Using C++, 2nd edition</a></li>
+</ul>
+
+<p>Si ya sabes algo de programación te recomiendo <a href="http://www.stroustrup.com/4th.html" target="_blank">The C++ Programming Language, 4th edition</a> de Stroustrup, el creador de C++.</p>
+
+<p>Los libros que nombré enseñan C++11. C++11 ha cambiado el lenguaje de forma significante, y por eso recomiendo leer un libro de C++11 y no de C++98 o (C++03). También existen C++14 y C++17. C++14 es solo una extensión menor de C++11, es decir no han habido muchos cambios. C++17 introduce nuevas características, pero el estándar recién fue publicado en diciembre de 2017, el soporte de estas características en los compiladores todavía es experimental y no hay muchos libros que cubran C++17. De cualquier forma C++17 no se utiliza en el ICPC, pero eso no quiere decir que sea mala idea ir revisándolo.</p>
+
+<p>Si quieres ver otros recursos revisa estos enlaces:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list" target="_blank">The Definitive C++ Book Guide and List</a> de Stack Overflow.</li>
+<li><a href="https://www.reddit.com/r/learnprogramming/wiki/faq_cpp#wiki_where_can_i_learn_c.2B.2B.3F" target="_blank">C++ FAQ</a> de r/learnprogramming.</li>
+</ul>
+
+    
+        
+
+<h1 id="acerca-de-esta-guía">Acerca de esta guía</h1>
+
+<p>Esta guía se continúa escribiendo y espero que algún día llegue a estar casi terminada y pueda ser de ayuda a los nuevos estudiantes que .</p>
+
+<p>Si encuentras algún error, o crees que haya algo que se pueda mejorar puedes dejar un issue en el <a href="https://github.com/kevinzg/competitive-programming-guide" target="_blank">repositorio</a>. Pull requests también son bienvenidos.</p>
+
+<p><span style="float: right;"><em>kevinz</em></span></p>
+
+<h2 id="licencia">Licencia</h2>
+
+<p>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
 
     
 

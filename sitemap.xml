@@ -3,7 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://kevinzg.github.io/competitive-programming-guide/main/</loc>
+    <loc>http://kevinzg.github.io/competitive-programming-guide/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kevinzg.github.io/competitive-programming-guide/problems/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kevinzg.github.io/competitive-programming-guide/judges/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kevinzg.github.io/competitive-programming-guide/io/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kevinzg.github.io/competitive-programming-guide/addendum/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kevinzg.github.io/competitive-programming-guide/about/</loc>
   </url>
   
   <url>
