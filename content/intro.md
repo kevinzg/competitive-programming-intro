@@ -8,7 +8,7 @@ title: Introduction
 ## ¿Qué es esto de programación competitiva?
 
 <!-- Temporal hack while I figure out hugo/template's css -->
-<blockquote style="text-align: center">
+<blockquote style="text-align: center; font-family: unset;">
   <img src="images/acm-icpc-wf-2018.jpg" title="ACM-ICPC World Finals 2018"/>
   <small>ICPC Photo by <a href="//icpc.baylor.edu">icpc.baylor.edu</a> (CC BY 3.0) </small>
 </blockquote>
