@@ -1,6 +1,6 @@
-baseURL = "http://kevinzg.github.io/competitive-programming-guide/"
+baseURL = "http://kevinzg.github.io/competitive-programming-intro/"
 languageCode = "es"
-title = "Guía de programación competitiva"
+title = "Introducción a la programación competitiva"
 theme = "docuapi"
 
 # Code higlighting settings
@@ -29,7 +29,7 @@ name = "C++11"
 [languages.es]
 languageName = "Español"
 weight = 2
-title = "Guía de programación competitiva"
+title = "Introducción a la programación competitiva"
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [
