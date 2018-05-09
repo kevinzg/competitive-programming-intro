@@ -1,3 +1,7 @@
 .sidebar-title {
     font-size: 36px;
 }
+
+.content figure {
+    display: none;
+}
