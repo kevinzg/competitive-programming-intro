@@ -44,7 +44,7 @@ int my_pow(int x, int p)
     if (p == 0) return 1.0;
     if (p == 1) return x;
     int a = my_pow(x, p / 2);
-    return a * a * (p % 2 == 0 ? 1.0 : x);
+    return a * a * (p % 2 == 0 ? 1 : x);
 }
 
 int main()
