@@ -7,11 +7,9 @@ title: Introduction
 
 ## ¿Qué es esto de programación competitiva?
 
-<!-- Temporal hack while I figure out hugo/template's css -->
-<blockquote style="text-align: center; font-family: unset;">
-  <img src="images/acm-icpc-wf-2018.jpg" title="ACM-ICPC World Finals 2018"/>
-  <small>ICPC Photo by <a href="//icpc.baylor.edu">icpc.baylor.edu</a> (CC BY 3.0) </small>
-</blockquote>
+{{< figure src="images/acm-icpc-wf-2018.jpg"
+    title="ACM-ICPC World Finals 2018"
+    attr="icpc.baylor.edu" attrlink="//icpc.baylor.edu" >}}
 
 La programación competitiva es un deporte mental donde los competidores tienen que escribir programas para resolver varios problemas lo más rápido posible.
 
