@@ -90,7 +90,7 @@ Si todavía no conoces todos esos conceptos no hay problema, puedes ir revisando
 
 ## ¿Qué lenguajes de programación puedo usar?
 
-Los lenguajes de programación que usaré son Python 3 y C++11. Elegí estos lenguajes porque Python suele ser el primer lenguaje que enseñan en la universidad, y C++ es probablemente el lenguaje más usado en el mundo de la programación competitiva. Si gustas usar otro lenguaje te recomiendo escoger uno de estos:
+Los lenguajes de programación que usaré en este documento son Python 3 y C++11. Elegí estos lenguajes porque Python suele ser el primer lenguaje que enseñan en la universidad, y C++ es probablemente el lenguaje más usado en el mundo de la programación competitiva. Sin embargo, tú puedes usar el lenguaje que gustes, pero te recomiendo escoger uno de estos:
 
 - Java
 - C
