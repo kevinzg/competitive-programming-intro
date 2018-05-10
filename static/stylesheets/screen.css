@@ -75,6 +75,10 @@
     padding: 1em 1em 0;
 }
 
+.spoiler > div code {
+    transition: color .5s ease-in;
+}
+
 .spoiler > div p {
     margin-bottom: 0;
     padding-bottom: 1em;
@@ -82,4 +86,8 @@
 
 .spoiler > div:not(:hover) {
     color: rgba(0, 0, 0, 0);
+}
+
+.spoiler > div:not(:hover) code {
+    background-color: transparent;
 }
