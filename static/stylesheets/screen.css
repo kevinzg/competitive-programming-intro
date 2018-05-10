@@ -58,3 +58,28 @@
     margin-top: -22px;
 }
 
+.spoiler {
+    width: 50%;
+    margin-right: 50%;
+    margin-bottom: 1em;
+    float: left;
+    clear: none;
+}
+
+.spoiler > div {
+    transition: color .5s ease-in;
+    box-sizing: border-box;
+    margin: 0 28px 0px;
+    border-left: 2px solid #8fb7ff;
+    background-color: #e3eeff;
+    padding: 1em 1em 0;
+}
+
+.spoiler > div p {
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
+
+.spoiler > div:not(:hover) {
+    color: rgba(0, 0, 0, 0);
+}
