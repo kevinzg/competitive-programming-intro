@@ -26,10 +26,6 @@
     clear: both;
 }
 
-.content blockquote {
-    font-family: monospace;
-}
-
 .content figure {
     background-color: #292929;
     color: #fff;
@@ -57,3 +53,8 @@
     text-decoration: none;
     border-bottom: dashed 1px #ccc;
 }
+
+.content pre, .content blockquote, .content figure {
+    margin-top: -22px;
+}
+
