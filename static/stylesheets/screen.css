@@ -99,7 +99,6 @@
     border: 1px solid transparent;
     border-color: #bee5eb;
     display: flex;
-    text-shadow: 0 1px 0 #c6dde9;
 }
 
 .content div.note > div::before {
@@ -111,4 +110,8 @@
     justify-content: center;
     padding-right: 0.5em;
     padding-bottom: 1em;
+}
+
+.content > p {
+    text-shadow: unset;
 }
