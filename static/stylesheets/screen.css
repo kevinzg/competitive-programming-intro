@@ -58,7 +58,7 @@
     margin-top: -22px;
 }
 
-.spoiler {
+.content div.spoiler, .content div.note {
     width: 50%;
     margin-right: 50%;
     margin-bottom: 1em;
@@ -66,28 +66,51 @@
     clear: none;
 }
 
-.spoiler > div {
-    transition: color .5s ease-in;
+.content div.spoiler > div, .content div.note > div {
     box-sizing: border-box;
     margin: 0 28px 0px;
-    border-left: 2px solid #8fb7ff;
-    background-color: #e3eeff;
     padding: 1em 1em 0;
 }
 
-.spoiler > div code {
+.content div.spoiler > div {
     transition: color .5s ease-in;
+    border-left: 2px solid #8fb7ff;
+    background-color: #e3eeff;
 }
 
-.spoiler > div p {
+.content div.spoiler > div p, .content div.note > div p {
     margin-bottom: 0;
     padding-bottom: 1em;
 }
 
-.spoiler > div:not(:hover) {
+.content div.spoiler > div code {
+    transition: color .5s ease-in;
+}
+
+.content div.spoiler > div:not(:hover) {
     color: rgba(0, 0, 0, 0);
 }
 
-.spoiler > div:not(:hover) code {
+.content div.spoiler > div:not(:hover) code {
     background-color: transparent;
+}
+
+.content div.note > div {
+    border-radius: .25rem;
+    background-color: #d1ecf1;
+    border: 1px solid transparent;
+    border-color: #bee5eb;
+    display: flex;
+    text-shadow: 0 1px 0 #c6dde9;
+}
+
+.content div.note > div::before {
+    content: "\e602";
+    font-family: 'slate';
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.5em;
+    padding-bottom: 1em;
 }
