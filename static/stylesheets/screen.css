@@ -62,8 +62,6 @@
     width: 50%;
     margin-right: 50%;
     margin-bottom: 1em;
-    float: left;
-    clear: none;
 }
 
 .content div.spoiler > div, .content div.note > div {
