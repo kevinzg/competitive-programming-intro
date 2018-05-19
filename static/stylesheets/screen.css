@@ -95,9 +95,9 @@
 
 .content div.note > div {
     border-radius: .25rem;
-    background-color: #d1ecf1;
+    background-color: #e3effc;
     border: 1px solid transparent;
-    border-color: #bee5eb;
+    border-color: #bad4f1;
     display: flex;
 }
 
