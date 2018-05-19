@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.40.2" />
+	<meta name="generator" content="Hugo 0.40.3" />
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -9,7 +9,8 @@
     <link href='/competitive-programming-intro/slate/stylesheets/monokai.css' rel="stylesheet" media="screen" />
 <link href='/competitive-programming-intro/slate/stylesheets/screen.css' rel="stylesheet" media="screen" />
 <link href='/competitive-programming-intro/slate/stylesheets/print.css' rel="stylesheet" media="print" />
-<link href='/competitive-programming-intro/stylesheets/style.css' rel="stylesheet" />
+<link href='/competitive-programming-intro/stylesheets/screen.css' rel="stylesheet" media="screen" />
+<link href='/competitive-programming-intro/stylesheets/print.css' rel="stylesheet" media="print" />
 
     
 <script src='/competitive-programming-intro/slate/javascripts/all_nosearch.js'></script>
@@ -45,8 +46,8 @@
          
         
         <ul class="toc-footer">
-  <li>Última actualización: 2018-05-06 15:17</li>
-  <li><em><a href="https://github.com/kevinzg/competitive-programming-intro">48a4c74</a></em></li>
+  <li>Última actualización: 2018-05-19 06:00</li>
+  <li><em><a href="https://github.com/kevinzg/competitive-programming-intro">0922a38</a></em></li>
 </ul>
 
 
@@ -60,22 +61,34 @@
 
 <h1 id="introducción">Introducción</h1>
 
+
+<figure>
+    
+        <img src="images/acm-icpc-wf-2018.jpg" />
+    
+    
+    <figcaption>
+        <h4>ACM-ICPC World Finals 2018</h4>
+        <p>
+        
+        <a href="//icpc.baylor.edu"> 
+            icpc.baylor.edu
+        </a> 
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
 <h2 id="qué-es-esto-de-programación-competitiva">¿Qué es esto de programación competitiva?</h2>
 
-<!-- Temporal hack while I figure out hugo/template's css -->
+<p>La programación competitiva es un deporte mental donde los competidores tienen que programar para resolver un conjunto de problemas lo más rápido posible.</p>
 
-<blockquote style="text-align: center; font-family: unset;">
-  <img src="images/acm-icpc-wf-2018.jpg" title="ACM-ICPC World Finals 2018"/>
-  <small>ICPC Photo by <a href="//icpc.baylor.edu">icpc.baylor.edu</a> (CC BY 3.0) </small>
-</blockquote>
+<p>Los problemas son problemas conocidos de ciencia de la computación, y por conocidos quiero decir que ya tienen solución. Por lo menos el creador de los problemas (<em>problem setter</em>) los ha resuelto.</p>
 
-<p>La programación competitiva es un deporte mental donde los competidores tienen que escribir programas para resolver varios problemas lo más rápido posible.</p>
+<p>Resolver un problema significa escribir un programa que lea unos datos de entrada (<em>input</em>) y produzca unos datos de salida (<em>output</em>) según la descripción del problema. Una vez se haya resuelto un problema este será enviado a un juez (<em>judge</em>) para su revisión. El juez ejecutará el programa con varios casos de prueba y verificará que la salida sea igual a la salida dada por el problem setter. Finalmente, el juez le responderá al competidor que envió el programa si su solución es correcta o no.</p>
 
-<p>Los problemas son problemas conocidos de ciencia de la computación, y por conocidos quiero decir que ya tienen solución. Por lo menos el creador de los problemas (o <em>problem setter</em>) los ha resuelto.</p>
-
-<p>Resolver un problema significa escribir un programa que lea unos datos de entrada (<em>input</em>) y produzca unos datos de salida (<em>output</em>) según la descripción del problema. Una vez se haya resuelto un problema este será enviado a un juez (<em>judge</em>) para su revisión. El juez probará el programa con varios casos de prueba y revisará si la salida es igual a la salida dada por el problem setter. Finalmente el juez le responderá al competidor que envió el programa si su solución es correcta o no.</p>
-
-<p>Quién resuelva la mayor cantidad de problemas en el menor tiempo posible gana.</p>
+<p>Quién resuelva correctamente la mayor cantidad de problemas en el menor tiempo posible gana.</p>
 
 <h2 id="y-por-qué-debería-competir-o-entrenar">¿Y por qué debería competir o entrenar?</h2>
 
@@ -93,7 +106,7 @@
 
 <p>Y hay muchas más razones, sin olvidar por supuesto que es bastante entretenido.</p>
 
-<h2 id="muy-bien-hay-algún-pre-requisito">Muy bien, ¿hay algún pre-requisito?</h2>
+<h2 id="bien-hay-algún-pre-requisito">Bien, ¿hay algún pre-requisito?</h2>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -102,7 +115,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mf">1.0</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="n">x</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">x</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
@@ -139,15 +152,13 @@
 <li>Tener el deseo de aprender.</li>
 </ul>
 
-<p>En esta guía te enseñaré algunos conceptos de programación, pero ya deberías entender lo que son variables, tipos de datos, operadores, estructuras de control de flujo (<em>if</em>, <em>else</em>, <em>for</em>, <em>while</em>, etc.), funciones, arreglos, entrada y salida, módulos (<em>import</em>, <em>include</em>), clases o estructuras, etc.</p>
+<p>En esta introducción te enseñaré algunos conceptos de programación, pero ya deberías entender lo que son variables, tipos de datos, operadores, estructuras de control de flujo (<em>if</em>, <em>else</em>, <em>for</em>, <em>while</em>, etc.), funciones, arreglos, entrada y salida, módulos (<em>import</em>, <em>include</em>), clases o estructuras, etc.</p>
 
-<p>Si todavía no conoces todos esos conceptos no hay problema, puedes ir revisando <a href="#tutoriales-de-programación">tutoriales de programación</a> en el camino, por ahora entender el código de la derecha debería ser suficiente.</p>
+<p>Si todavía no conoces todos esos conceptos no hay problema, puedes ir revisando <a href="#tutoriales-de-programación">tutoriales de programación</a> en el camino. Por ahora entender el código de la derecha debería ser suficiente.</p>
 
-<p>Ahora sobre los lenguajes de programación.</p>
+<h2 id="qué-lenguajes-de-programación-puedo-usar">¿Qué lenguajes de programación puedo usar?</h2>
 
-<h2 id="lenguajes-de-programación">Lenguajes de programación</h2>
-
-<p>Los lenguajes de programación que usaré en esta guía son Python 3 y C++11. Elegí estos lenguajes porque Python suele ser el primer lenguaje que te enseñan, y C++ es probablemente el lenguaje más usado en el mundo de la programación competitiva. Si gustas usar otro lenguaje te recomiendo escoger uno de estos:</p>
+<p>Los lenguajes de programación que usaré en este documento son Python 3 y C++11. Elegí estos lenguajes porque Python suele ser el primer lenguaje que enseñan en la universidad, y C++ es probablemente el lenguaje más usado en el mundo de la programación competitiva. Sin embargo, tú puedes usar el lenguaje que gustes, pero te recomiendo escoger uno de estos:</p>
 
 <ul>
 <li>Java</li>
@@ -165,9 +176,27 @@
     
         
 
-<h1 id="problemas">Problemas</h1>
+<h1 id="el-primer-problema">El primer problema</h1>
 
-<p>Vamos a resolver nuestro primer problema, el problema 4A de Codeforces, <a href="http://codeforces.com/problemset/problem/4/A" target="_blank">Watermelon</a>.</p>
+<h2 id="problema">Problema</h2>
+
+<blockquote>
+<h3>Watermelon</h3>  
+
+<p>One hot summer day Pete and his friend Billy decided to buy a watermelon. They chose the biggest and the ripest one, in their opinion. After that the watermelon was weighed, and the scales showed <em>w</em> kilos. They rushed home, dying of thirst, and decided to divide the berry, however they faced a hard problem.<br />
+Pete and Billy are great fans of even numbers, that&rsquo;s why they want to divide the watermelon in such a way that each of the two parts weighs even number of kilos, at the same time it is not obligatory that the parts are equal. The boys are extremely tired and want to start their meal as soon as possible, that&rsquo;s why you should help them and find out, if they can divide the watermelon in the way they want. For sure, each of them should get a part of positive weight.<br />
+<strong>Input</strong><br />
+The first (and the only) input line contains integer number <em>w</em> (1 ≤ <em>w</em> ≤ 100) — the weight of the watermelon bought by the boys.<br />
+<strong>Output</strong><br />
+Print <code>YES</code>, if the boys can divide the watermelon into two parts, each of them weighing even number of kilos; and <code>NO</code> in the opposite case.<br />
+<strong>Examples</strong><br />
+<em>Input</em>:<br />
+<code>8</code><br />
+<em>Output</em>:<br />
+<code>YES</code></p>
+</blockquote>
+
+<p>Vamos a resolver nuestro primer problema, el problema 4A de Codeforces, <a href="http://codeforces.com/problemset/problem/4/A" target="_blank">Watermelon</a>. Lo copio a la derecha por conveniencia.</p>
 
 <p>Los problemas tienen 4 partes: enunciado, entrada, salida, y ejemplos.</p>
 
@@ -175,10 +204,15 @@
 <li>El <strong>enunciado</strong> es el texto donde describen el problema. Generalmente tiene una historia introductoria, y seguido la definición, probablemente implícita, del problema en sí.</li>
 <li>La <strong>entrada</strong> es la descripción de cómo se presentarán los datos en el archivo de entrada (<em>stdin</em>). También suele contener las restricciones de las variables de entrada.</li>
 <li>La <strong>salida</strong> es la descripción de cómo se debe imprimir la respuesta del problema al archivo de salida (<em>stdout</em>).</li>
-<li>Los <strong>ejemplos</strong> son casos de prueba dados por el <em>problem setter</em> para entender mejor el problema.</li>
+<li>Los <strong>ejemplos</strong> son casos de prueba que acompañan al problema para poder entenderlo mejor.</li>
 </ul>
 
-<p>Los problemas también suelen tener el tiempo límite y el límite de memoria para resolver el problema, es decir, nuestro programa no puede demorarse más de ese tiempo ni usar más memoria de la indicada.</p>
+<p>Los problemas también suelen tener indicado el tiempo límite y el límite de memoria, es decir, nuestro programa no puede demorar más de ese tiempo ni usar más memoria de la indicada.</p>
+
+<div style="clear: both;"></div>
+
+
+<h2 id="solución">Solución</h2>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -200,18 +234,68 @@
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;YES&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;NO&#39;</span><span class="p">)</span></code></pre></div>
-<p>Lee el problema <a href="http://codeforces.com/problemset/problem/4/A" target="_blank">Watermelon</a> y trata de resolverlo en tu lenguaje favorito. La solución debería verse como el código de la derecha. Una vez hayas terminado tu código envíalo al juez para que lo pruebe (tienes que registrarte primero).</p>
+<p>Después de leer el problema trata de resolverlo en tu lenguaje favorito. La solución debería verse similar al código de la derecha. Una vez hayas terminado tu código envíalo (<em>submit</em>) al juez para que lo pruebe (tienes que registrarte primero).</p>
 
 <p>El juez te dirá si tu código está bien (<em>Accepted</em>) o no. Listaré algunos de los problemas comunes por los que tu programa podría fallar:</p>
 
 <ul>
-<li>No imprimas nada más que la respuesta. Si estás imprimiendo algo como &ldquo;Ingrese el valor w:&ldquo;, o &ldquo;La respuesta es:&rdquo; el juez lo tomará como una solución errónea.</li>
-<li>Las mayúsculas son diferentes a las minúsculas. Revisa la descripción del problema y observa cuál es el formato exacto en que debes imprimir la respuesta.</li>
-<li>Si estás imprimiendo en el formato correcto y el código sigue mal debe haber un error en la lógica del programa. Vuelve a leer el problema y revisa si tu código está realmente haciendo lo que pide.</li>
-<li>Prueba casos de prueba extremos, es decir muy pequeños y muy grandes, a veces los errores se suelen esconder ahí.</li>
+<li>No imprimas nada más que la respuesta. Si estás imprimiendo algo como <code>Ingrese el valor w:</code>, o <code>La respuesta es:</code> el juez lo tomará como una solución errónea.</li>
+<li>Las mayúsculas son diferentes a las minúsculas. Revisa la descripción del problema y observa cuál es el formato exacto en el que debes imprimir la respuesta.</li>
+<li>Si estás imprimiendo en el formato correcto y el juez no cede debe haber un error en la lógica de tu solución. Vuelve a leer el problema y revisa si tu código está haciendo realmente lo que pide.</li>
+<li>Prueba tu código con casos de prueba extremos, es decir, valores muy pequeños y muy grandes (dentro del límite dado). A veces, léase muy a menudo, los errores se suelen esconder ahí.</li>
 </ul>
 
+<p>Si todavía no puedes resolverlo te dejo la solución para que veas donde te equivocaste:</p>
+
+<div class="spoiler">
+    <div>
+        <p>El problema te pregunta si existen dos números enteros positivos y pares tales que su suma sea <em>w</em>. Los números existen si <em>w</em> es par excepto por el valor 2 (la única posibilidad sería 1 y 1, pero 1 no es par). Entonces, la condición que tienes completar en el código es <code>w % 2 == 0 and w != 2</code>.</p>
+
+    </div>
+</div>
+
+
 <p>¡Enhorabuena! Ya has debido resolver tu primer problema. Si quieres resolver más <a href="http://codeforces.com/problemset?order=BY_SOLVED_DESC" target="_blank">esta es una lista de los problemas en orden de dificultad</a>.</p>
+
+    
+        
+
+<h1 id="jueces-en-línea">Jueces en línea</h1>
+
+<p>Los jueces en línea (<em>online judges</em>) son sitios web donde puedes encontrar problemas para resolver y enviar tus soluciones.</p>
+
+<p>Hay una gran cantidad de online judges, pero voy a ir listando los que vamos a ir usando.</p>
+
+<h2 id="codeforces">Codeforces</h2>
+
+<p><a href="http://codeforces.com/" target="_blank">Codeforces</a> es un juez ruso que aparte de tener una gran variedad de problemas realiza contests en línea con problemas nuevos de forma seguida. Luego de que terminan los contests publican una editorial con la solución a los problemas. También te permite ver el código de los demás usuarios y (parcialmente) los casos de prueba de los problemas. Por eso este juez es uno de los mejores para aprender.</p>
+
+<h2 id="a-sup-2-sup-online-judge">A<sup>2</sup> Online Judge</h2>
+
+<p><a href="https://a2oj.com/" target="_blank">A<sup>2</sup> OJ</a>, también conocido como Ahmed Aly, su creador, no tiene muchos problemas para resolver, pero permite crear contests en línea al estilo ICPC con problemas de otros jueces para entrenar. También tiene una <a href="https://a2oj.com/categories" target="_blank">muy útil lista</a> de problemas por categoría.</p>
+
+<h2 id="uva-online-judge">UVa Online Judge</h2>
+
+<p><a href="https://uva.onlinejudge.org/" target="_blank">UVa</a>, juez de la Universidad de Valladolid, uno de los más populares. Tiene una gran cantidad de problemas y es el juez usado en los libros de <a href="https://cpbook.net/" target="_blank"><em>Competitive Programming</em></a> de Steven Halim. También tiene un foro donde puedes discutir los problemas y <a href="https://www.udebug.com/" target="_blank">uDebug</a>, un sitio web donde puedes enviar la entrada de problemas y ver cuál es la salida correcta. Recomiendo usar <a href="http://uhunt.onlinejudge.org/id/0/" target="_blank">uHunt</a> para buscar problemas, tiene una interfaz más amigable que la del juez.</p>
+
+<h2 id="otros-jueces">Otros jueces</h2>
+
+<ul>
+<li><a href="https://icpcarchive.ecs.baylor.edu/" target="_blank">ACM-ICPC Live Archive</a></li>
+<li><a href="http://spoj.com/" target="_blank">SPOJ</a></li>
+<li><a href="https://www.urionlinejudge.com.br/judge/en/login" target="_blank">URI</a></li>
+<li><a href="http://acm.timus.ru/" target="_blank">Timus</a></li>
+<li><a href="http://poj.org/" target="_blank">PKU</a></li>
+<li><a href="http://acm.zju.edu.cn/onlinejudge/showProblemsets.do" target="_blank">ZOJ</a></li>
+<li><a href="http://acm.sgu.ru/" target="_blank">SJU</a></li>
+<li><a href="http://coj.uci.cu/24h/problems.xhtml" target="_blank">COJ</a></li>
+<li><a href="http://lightoj.com" target="_blank">Light OJ</a></li>
+<li><a href="http://acm.hdu.edu.cn/" target="_blank">HDU</a></li>
+<li><a href="https://open.kattis.com/problems" target="_blank">Kattis</a></li>
+<li><a href="https://topcoder.com/" target="_blank">TopCoder</a></li>
+<li><a href="https://www.codechef.com/" target="_blank">CodeChef</a></li>
+<li><a href="http://train.usaco.org/usacogate" target="_blank">USACO</a></li>
+</ul>
 
 <h2 id="respuestas-del-juez">Respuestas del juez</h2>
 
@@ -233,96 +317,435 @@
     
         
 
-<h1 id="jueces-en-línea">Jueces en línea</h1>
-
-<p>Los jueces en línea (o <em>online judges</em>) son sitios web donde puedes encontrar problemas para resolver y enviar tus soluciones.</p>
-
-<p>Hay una gran cantidad de online judges, pero voy a ir listando los que vamos a ir usando.</p>
-
-<h2 id="codeforces">Codeforces</h2>
-
-<p><a href="http://codeforces.com/" target="_blank">Codeforces</a> es un juez ruso que aparte de tener una gran variedad de problemas realiza contests en línea con problemas nuevos de forma seguida. Luego de que terminan los contests publican una editorial con la solución a los problemas. También te permite ver el código de los demás usuarios y (parcialmente) los casos de prueba de los problemas. Por eso este juez es uno de los mejores para aprender.</p>
-
-<h2 id="a-sup-2-sup-online-judge">A<sup>2</sup> Online Judge</h2>
-
-<p><a href="https://a2oj.com/" target="_blank">A<sup>2</sup> OJ</a>, también conocido como Ahmed Aly, su creador, no solo tiene problemas para resolver, sino también permite crear contests en línea con problemas de muchos otros jueces para entrenar. También tiene una <a href="https://a2oj.com/categories" target="_blank">muy útil lista</a> de problemas por categoría.</p>
-
-    
-        
-
 <h1 id="entrada-y-salida">Entrada y salida</h1>
 
-<p>Los programas que escribas tienen 3 archivos especiales a los que pueden acceder: <code>stdin</code> (lectura), <code>stdout</code> (escritura) y <code>stderr</code> (escritura de errores).</p>
 
-<p>Cuando ejecutas tu programa en la terminal, el <code>shell</code> (el intérprete de la línea de comando) asigna el archivo <code>stdin</code> a la entrada de teclado, y <code>stdout</code> y <code>stderr</code> a la salida de la terminal. Eso quiere decir que lo que escribas en la terminal podrá ser leído por tu programa desde el archivo <code>stdin</code> y lo que imprima al archivo <code>stdout</code> lo podrás ver en tu pantalla. <code>stderr</code> también imprimirá a la pantalla, pero luego veremos cuál es la diferencia con <code>stdin</code>.</p>
+<figure>
+    
+        <img src="images/stdstreams.png" />
+    
+    
+    <figcaption>
+        <h4>Standard Streams</h4>
+        <p>
+        
+        <a href="//commons.wikimedia.org/wiki/File:Stdstreams-notitle.svg"> 
+            wikimedia.org
+        </a> 
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>Los problemas siempre mencionan que la entrada debe ser leída del <em>standard input</em> y la salida debe ser impresa en el <em>standard output</em>, pero ¿qué significa eso? El <em>standard input</em> o <code>stdin</code> es un archivo especial al que podemos acceder desde nuestro programa para leer de él. De igual forma, el <em>standard output</em> o <code>stdout</code> es otro archivo especial en el que podemos escribir.</p>
+
+<p>Cuando ejecutamos un programa desde la terminal el intérprete de la línea de comandos (<em>shell</em>) asigna el archivo <code>stdin</code> a la entrada de teclado y el archivo <code>stdout</code> a la pantalla de la terminal. Eso quiere decir que lo que escribamos en la terminal podrá ser leído del archivo <code>stdin</code> y lo que imprimamos al archivo <code>stdout</code> será mostrado en la pantalla.</p>
+
+<p>Y ¿cómo leemos y escribimos a esos archivos? Pues ya lo hemos estado haciendo. Para leer del archivo <code>stdin</code> en Python usamos la función <code>input()</code>, y en C++ el objeto <code>cin</code>. Asimismo, para imprimir al archivo <code>stdout</code> usamos la función <code>print()</code> y el objeto <code>cout</code>.</p>
+
+<h2 id="fin-de-archivo">Fin de archivo</h2>
+
+<p>Hay ciertos problemas que no indican que tan larga es la entrada y por lo tanto debemos leer hasta que termine el archivo. Para saber si el archivo ha terminado existe una marca especial llamada <em>end-of-file</em> o <code>EOF</code> que debemos detectar.</p>
+
+<p>En Python se puede iterar todo el objeto archivo (<em>file object</em>) <code>stdin</code> del módulo <code>sys</code>, él mismo ya sabe cuando termina. En C++ lo recomendado es chequear el objeto <code>cin</code> como un valor booleano, si te da <code>false</code> significa que llegamos al final.</p>
+
+<p>Si estás confundido no te preocupes, los ejemplos te mostrarán cómo hacerlo.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p>Si quieres ingresar manualmente un <code>EOF</code> desde la terminal deberás usar la combinación de teclas <code>Ctrl + D</code> en Linux o <code>Ctrl + Z</code> en Windows.</p>
+
+        </div>
+
+        
+    </div>
+</div>
+
+
+<div style="clear: both;"></div>
+
 
 <h2 id="entrada">Entrada</h2>
-
-<blockquote>
-<p>10 20 30</p>
-</blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">string</span> <span class="n">a</span><span class="p">;</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span> <span class="kt">float</span> <span class="n">c</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">abc</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span></code></pre></div>
-<p>Para leer de <code>stdin</code> en Python 3 usamos la función <code>input()</code>. La función <code>input()</code> lee una línea completa, es decir hasta encontrar un salto de línea (<code>\n</code>) y devuelve la línea como un string (sin incluir el salto de línea).</p>
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
 
-<p>En C++ se utiliza un objeto global llamado <code>std::cin</code> que se encuentra en el header <code>iostream</code>. Este objeto define al operador <code>&gt;&gt;</code> (que en este contexto significa <em>extraer</em>) y necesita de una variable donde guardar lo extraído. A diferencia de Python, <code>std::cin</code> ignora los espacios en blanco e intenta extraer de <code>stdin</code> un string que se pueda convertir al tipo de dato de la variable con que se esté operando.</p>
+<span class="c1"># ...</span></code></pre></div>
+<p>Aquí te dejo unos ejemplos de entrada comunes y su código para leerlos. Ten en cuenta que la forma expuesta no es la única para leer del <code>stdin</code> y que la lista de ejemplos está lejos de estar completa.</p>
 
-<p>Consideren el siguiente ejemplo. La entrada es <code>10 20 30</code>. En el caso de Python la variable <code>abc</code> tendrá toda la línea, es decir el string <code>10 20 30</code>.
-En el caso de C++ el string <code>a</code> tendrá como valor el string <code>10</code>, el entero <code>b</code> será el entero 20, y el flotante <code>c</code> será el flotante 30.0. Es decir C++ usa a los espacios en blancos como separadores y convierte al string al tipo de dato de la variable donde se extrae.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<p>Vas a encontrar problemas con los que tendrás dificultades con la entrada. Cuando esto suceda dale una leída a la documentación de entrada y salida de <a href="https://docs.python.org/3/library/io.html" target="_blank">Python</a> o <a href="http://en.cppreference.com/w/cpp/io" target="_blank">C++</a> y trata de eliminar esas dificultades.</p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<p>Los ejemplos de Python necesitan importar <code>stdin</code> del módulo <code>sys</code> y los de C++ incluir las cabeceras <code>iostream</code>, <code>string</code> y <code>sstream</code>.</p>
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-1">Ejemplo 1</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">string</span> <span class="n">abc</span><span class="p">;</span>
-    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">abc</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stdin</span><span class="p">:</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># ...</span></code></pre></div>
+<p>La entrada contiene múltiples casos de prueba, una línea por cada caso. Cada línea consiste de dos enteros <code>a</code> y <code>b</code> separados por un espacio.</p>
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-2">Ejemplo 2</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># ...</span></code></pre></div>
+<p>La entrada contiene un entero <code>N</code> en la primer línea, y luego <code>N</code> líneas continúan. Cada línea consiste de un par de enteros <code>a</code> y <code>b</code>, separados por un espacio.</p>
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-3">Ejemplo 3</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="c1"># ...</span></code></pre></div>
+<p>La entrada contiene múltiples casos de prueba, una línea por cada caso. Cada línea contiene un par de enteros <code>a</code> y <code>b</code> separados por un espacio. Un caso de prueba con los valores <code>0 0</code> indica el fin de la entrada y no deberá ser procesado.</p>
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-4">Ejemplo 4</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="o">&amp;&amp;</span> <span class="n">N</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stdin</span><span class="p">:</span>
+    <span class="n">N</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="c1"># ...</span></code></pre></div>
+<p>La entrada contiene múltiples casos de prueba, una línea por cada caso. Cada línea contiene un entero <code>N</code> seguido de <code>N</code> enteros. Un caso de prueba empezando con <code>0</code> indica el fin de la entrada y no deberá ser procesado.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p>La sintaxis <code>a, *b = ...</code> se llama <a href="https://www.python.org/dev/peps/pep-3132/#abstract" target="_blank">extended iterable unpacking</a>.</p>
+
+        </div>
+
+        
+            <code class="language-python" style="display: none"></code>
+        
+    </div>
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-5">Ejemplo 5</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">stringstream</span> <span class="n">ss</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">)</span> <span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stdin</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="c1"># ...</span></code></pre></div>
+<p>La entrada contiene múltiples casos de prueba, una línea por cada caso. Cada línea consiste de una lista de enteros separados por un espacio.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/basic_stringstream" target="_blank"><code>stringstream</code></a> es una clase similar a la de <code>cin</code> y <code>cout</code> que escribe o lee a un string en vez de a un archivo. En este caso lo iniciamos con el string que nos da <code>getline</code> y luego extraemos los enteros uno por uno.</p>
+
+        </div>
+
+        
+            <code class="language-cpp" style="display: none"></code>
+        
+    </div>
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-6">Ejemplo 6</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
+
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">T</span><span class="p">;</span>
+<span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">line</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">stringstream</span> <span class="n">ss</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">words</span><span class="p">;</span>
+        <span class="n">string</span> <span class="n">word</span><span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span> <span class="n">words</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+
+        <span class="c1">// ...
+</span><span class="c1"></span>    <span class="p">}</span>    
 <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></code></pre></div>
-<p>Entonces ¿cómo podemos asignar la entrada a tres variables distintas en Python?, el método split de un string divide al string en una lista de strings según el delimitador que especifiquemos, si no especificamos uno utilizará los espacios en blanco. Como sabemos el número de variables en la lista podemos usar esta sintaxis para desempacar la lista. Los valores de la lista siguen siendo strings, y por eso tendremos que convertirlos a enteros o flotantes según deseemos. ¿Y cómo podemos leer la línea completa en C++? Para eso utilizamos la función global <code>std::getline</code> del header <code>string</code>. <code>getline</code> recibe un objecto del mismo tipo de <code>cin</code>, o sea podemos pasarle <code>cin</code>, y un string donde almacenar lo leído.</p>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">T</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+        <span class="c1"># ...</span></code></pre></div>
+<p>La primer línea de la entrada es el número de casos de prueba, <code>T</code>. Cada caso de prueba consiste de varias líneas, cada línea consiste de una o varias palabras separadas por uno o más espacios. Los casos de prueba están separados por una línea en blanco.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p>Fíjate en la llamada a <code>cin.get()</code>. El método <a href="http://en.cppreference.com/w/cpp/io/basic_istream/get" target="_blank"><code>get()</code></a> extrae un carácter de la entrada. En este caso ese carácter es el salto de línea <code>'\n'</code> que está después de <code>T</code>. Si no extraemos ese salto de línea la llamada que hacemos luego a <code>getline()</code> sería un string vacío.</p>
+
+        </div>
+
+        
+            <code class="language-cpp" style="display: none"></code>
+        
+    </div>
+</div>
+
+
+<div style="clear: both;"></div>
+
 
 <h2 id="salida">Salida</h2>
+
+<p>La salida de los problemas no suele traer tantas dificultades, pero a veces pueden pedir un formato en especial.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p>Algo a tomar en cuenta son los saltos de línea o espacios demás. Los jueces modernos no le dan mucha importancia a si hay un salto de línea al final de la salida o no, pero hay problemas o jueces en los que eso te puede dar <em>presentation error</em> o incluso <em>wrong answer</em>.</p>
+
+        </div>
+
+        
+    </div>
+</div>
+
+
+<h3 id="ejemplo-1-1">Ejemplo 1</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;alice&#34;</span><span class="p">,</span> <span class="s">&#34;bob&#34;</span><span class="p">,</span> <span class="s">&#34;charlie&#34;</span><span class="p">};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="nl">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;charlie&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span></code></pre></div>
+<blockquote>
+<p><code>alice</code><br />
+<code>bob</code><br />
+<code>charlie</code><br />
+<code>&lt;línea en blanco&gt;</code></p>
+</blockquote>
+
+<p>Imprimir una lista de palabras con un salto de línea después de cada una.</p>
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplo-2-1">Ejemplo 2</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="n">string</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">number</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sep</span> <span class="o">&lt;&lt;</span> <span class="n">number</span><span class="p">;</span>
+    <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;, &#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code></pre></div>
+<blockquote>
+<p><code>1 6 1 8 0</code></p>
+</blockquote>
+
+<p>Imprimir una lista de enteros separados por una coma y un espacio. No imprimir una línea en blanco al final.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p>En Python 3 la función <code>print()</code> imprime un salto de línea al final, si quieres evitar eso puedes hacerlo con el parámetro <code>end</code>. Por ejemplo, <code>print('Hi', end='!')</code> imprimirá un <code>!</code> inmediatamente después de <code>Hi</code> sin ningún salto de línea.</p>
+
+        </div>
+
+        
+            <code class="language-python" style="display: none"></code>
+        
+    </div>
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+<h3 id="ejemplos-de-formato">Ejemplos de formato</h3>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;bitset&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">30</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">phi</span> <span class="o">=</span> <span class="mf">1.618033989</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Answer: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">answer</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Binary: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hexadecimal: 0x&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">hex</span> <span class="o">&lt;&lt;</span> <span class="n">uppercase</span> <span class="o">&lt;&lt;</span> <span class="n">answer</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;With zeroes: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">dec</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">answer</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Positive sign: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">internal</span> <span class="o">&lt;&lt;</span> <span class="n">showpos</span> <span class="o">&lt;&lt;</span> <span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;_&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">answer</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Padding: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">left</span> <span class="o">&lt;&lt;</span> <span class="n">noshowpos</span> <span class="o">&lt;&lt;</span> <span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;-&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">answer</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dec</span> <span class="o">&lt;&lt;</span> <span class="n">right</span> <span class="o">&lt;&lt;</span> <span class="n">noshowpos</span> <span class="o">&lt;&lt;</span> <span class="n">nouppercase</span> <span class="o">&lt;&lt;</span> <span class="n">setfill</span><span class="p">(</span><span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span> <span class="c1">// Reset
+</span><span class="c1"></span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Golden ratio: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">phi</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Less precision: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">phi</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;No precision: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">phi</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;With zeroes: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">phi</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Scientific: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">scientific</span> <span class="o">&lt;&lt;</span> <span class="n">phi</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">defaultfloat</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">setfill</span><span class="p">(</span><span class="sc">&#39; &#39;</span><span class="p">);</span> <span class="c1">// Reset
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span></code></pre></div>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="mf">1.618033989</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Answer: {:d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Binary: {:08b}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hexadecimal: 0x{:X}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;With zeroes: {:04d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Positive sign: {:_=+8d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Padding: {:-&lt;6d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Golden ratio: {:.5f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Less precision: {:.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;No precision: {:.0f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;With zeroes: {:07.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Scientific: {:.3e}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code></pre></div>
 <blockquote>
-<p>10 20 30</p>
+<p><code>Answer: 42</code><br />
+<code>Binary: 00101010</code><br />
+<code>Hexadecimal: 0x2A</code><br />
+<code>With zeroes: 0042</code><br />
+<code>Positive sign: +_____42</code><br />
+<code>Padding: 42----</code><br />
+<code>&lt;línea en blanco&gt;</code><br />
+<code>Golden ratio: 1.61803</code><br />
+<code>Less precision: 1.618</code><br />
+<code>No precision: 2</code><br />
+<code>With zeroes: 001.618</code><br />
+<code>Scientific: 1.618e+00</code></p>
 </blockquote>
 
-<p>Para imprimir a <code>stdout</code> en Python 3 usamos la función <code>print()</code>. La función <code>print()</code> recibe una variable, la convierte a un string y la imprime seguida de un salto de línea.</p>
+<p>En Python lo mejor es usar el método <code>format</code> de los strings. <a href="https://pyformat.info/" target="_blank">PyFormat</a> es un <em>cheat sheet</em> con varios ejemplos.</p>
 
-<p>En C++ se utiliza otro objeto global llamado <code>std::cout</code> que se encuentra en el header <code>iostream</code>. Este objeto define al operador <code>&lt;&lt;</code> (que en este contexto significa <em>introducir</em>) y necesita de la variable que se va a imprimir. A diferencia de Python, <code>std::cout</code> no imprime un salto de línea y tendremos que hacerlo manualmente.</p>
+<p>En C++ se utiliza lo que se llama <a href="https://en.cppreference.com/w/cpp/io/manip" target="_blank">manipuladores de salida</a>. Estos manipuladores son objetos o funciones que modifican al flujo (por ejemplo <code>cout</code> o un objeto de la clase <code>stringstream</code>) causando que imprima de manera diferente. Los manipuladores que más usarás son:</p>
 
-<p>Consideren el siguiente ejemplo. La salida requerida es <code>10 20 30\n</code>. En el caso de Python la función <code>print</code> recibe un parámetro opcional llamado <code>end</code> que es un string con el cual termina la impresión, para imprimir un espacio al final tenemos que pasarle <code>end=' '</code>, o sea, un string con un solo espacio.
-En el caso de C++ para imprimir el salto de línea deberemos imprimir manualmente el carácter <code>'\n'</code>, el string <code>&quot;\n&quot;</code>, o podemos usar otro objeto global llamado <code>std::endl</code>.</p>
+<ul>
+<li><code>setw</code>. El ancho del string de salida.</li>
+<li><code>setfill</code>. El carácter con el que se llena el string de salida.</li>
+<li><code>left</code>, <code>right</code>, <code>internal</code>. La posición de la variable en el string de salida.</li>
+<li><code>dec</code>, <code>hex</code>. La base de los enteros.</li>
+<li><code>setprecision</code>. La precisión de los valores de punto flotante.</li>
+<li><code>fixed</code>, <code>scientific</code>. El modo de imprimir valores de punto flotante.</li>
+</ul>
+
+<p>Ten en cuenta que los manipuladores, excepto por <code>setw</code>, no son temporales, van a afectar todo lo que imprimas después de ser usados. Si tienes que imprimir algo después &ldquo;sin formato&rdquo; tendrás que revertir los cambios.</p>
+
+<p>Te recomiendo que juegues con el código de la derecha cambiando valores y probando otros manipuladores o strings de formato.</p>
+
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            <p>En C++ también puedes usar <a href="http://en.cppreference.com/w/cpp/io/c/fprintf" target="_blank"><code>printf()</code></a> para imprimir con formato. <code>printf()</code> es más simple que los manipuladores de salida, pero no es buena idea mezclarlo con <code>cout</code>. Solo usa uno de los dos.</p>
+
+        </div>
+
+        
+            <code class="language-cpp" style="display: none"></code>
+        
+    </div>
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+<h2 id="salida-de-errores">Salida de errores</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;bugs&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stderr</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;bugs&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">stderr</span><span class="p">)</span></code></pre></div>
+<p>La salida de errores o <code>stderr</code> es otro archivo especial donde podemos escribir errores o mensajes de debug. Al igual que con el <code>stdout</code> los mensajes saldrán en la pantalla, pero estos no serán leídos por el juez (recuerda que él solo lee el <code>stdout</code>). De esta forma no tendremos que preocuparnos de que un mensaje extra escrito en el <code>stderr</code> nos cueste una solución correcta.</p>
 
     
         
 
-<h1 id="anexos">Anexos</h1>
+<h1 id="enlaces-externos">Enlaces externos</h1>
 
 <h2 id="tutoriales-de-programación">Tutoriales de programación</h2>
 
@@ -370,7 +793,7 @@ En el caso de C++ para imprimir el salto de línea deberemos imprimir manualment
 
 <p>Si ya sabes algo de programación te recomiendo <a href="http://www.stroustrup.com/4th.html" target="_blank">The C++ Programming Language, 4th edition</a> de Stroustrup, el creador de C++.</p>
 
-<p>Los libros que nombré enseñan C++11. C++11 ha cambiado el lenguaje de forma significante, y por eso recomiendo leer un libro de C++11 y no de C++98 o (C++03). También existen C++14 y C++17. C++14 es solo una extensión menor de C++11, es decir no han habido muchos cambios. C++17 introduce nuevas características, pero el estándar recién fue publicado en diciembre de 2017, el soporte de estas características en los compiladores todavía es experimental y no hay muchos libros que cubran C++17. De cualquier forma C++17 no se utiliza en el ICPC, pero eso no quiere decir que sea mala idea ir revisándolo.</p>
+<p>Los libros que nombré enseñan C++11. C++11 ha cambiado el lenguaje de forma significante, y por eso recomiendo leer un libro de C++11 y no de C++98 o (C++03). También existen C++14 y C++17. C++14 es solo una extensión menor de C++11, es decir no ha habido muchos cambios. C++17 introduce nuevas características, pero el estándar recién fue publicado en diciembre de 2017, el soporte de estas características en los compiladores todavía es experimental y no hay muchos libros que cubran C++17. De cualquier forma C++17 no se utiliza en el ICPC, claro que eso no quiere decir que sea mala idea ir revisándolo.</p>
 
 <p>Si quieres ver otros recursos revisa estos enlaces:</p>
 
@@ -382,9 +805,9 @@ En el caso de C++ para imprimir el salto de línea deberemos imprimir manualment
     
         
 
-<h1 id="acerca-de-esta-guía">Acerca de esta guía</h1>
+<h1 id="acerca-de">Acerca de</h1>
 
-<p>Esta guía se continúa escribiendo y espero que algún día llegue a estar casi terminada y pueda ser de ayuda a los nuevos estudiantes que .</p>
+<p>Este documento se continúa escribiendo y espero que algún día llegue a estar algo terminado y pueda ser de ayuda a los estudiantes que quieran iniciarse en el mundo de la programación competitiva.</p>
 
 <p>Si encuentras algún error, o crees que haya algo que se pueda mejorar puedes dejar un issue en el <a href="https://github.com/kevinzg/competitive-programming-intro" target="_blank">repositorio</a>. Pull requests también son bienvenidos.</p>
 
