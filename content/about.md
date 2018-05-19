@@ -3,9 +3,9 @@ weight: 400
 title: About
 ---
 
-# Acerca de esta guía
+# Acerca de
 
-Esta guía se continúa escribiendo y espero que algún día llegue a estar casi terminada y pueda ser de ayuda a los nuevos estudiantes que .
+Este documento se continúa escribiendo y espero que algún día llegue a estar algo terminado y pueda ser de ayuda a los estudiantes que quieran iniciarse en el mundo de la programación competitiva.
 
 Si encuentras algún error, o crees que haya algo que se pueda mejorar puedes dejar un issue en el [repositorio](https://github.com/kevinzg/competitive-programming-intro). Pull requests también son bienvenidos.
 
