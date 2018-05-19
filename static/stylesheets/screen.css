@@ -115,3 +115,7 @@
 .content > p {
     text-shadow: unset;
 }
+
+.no-highlight {
+    background-color: unset;
+}

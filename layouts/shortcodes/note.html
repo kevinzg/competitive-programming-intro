@@ -1,5 +1,11 @@
-<div class="note">
-    <div>
-        {{ .Inner }}
+<div class="highlight no-highlight">
+    <div class="note">
+        <div>
+            {{ .Inner }}
+        </div>
+
+        {{ with .Get "lang"}}
+            <code class="language-{{.}}" style="display: none"></code>
+        {{ end }}
     </div>
 </div>
