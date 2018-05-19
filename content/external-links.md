@@ -1,9 +1,9 @@
 ---
 weight: 300
-title: Addendum
+title: External Links
 ---
 
-# Anexos
+# Enlaces externos
 
 ## Tutoriales de programación
 
@@ -43,7 +43,7 @@ Si no tienes experiencia de programación te recomiendo uno de estos:
 
 Si ya sabes algo de programación te recomiendo [The C++ Programming Language, 4th edition](http://www.stroustrup.com/4th.html) de Stroustrup, el creador de C++.
 
-Los libros que nombré enseñan C++11. C++11 ha cambiado el lenguaje de forma significante, y por eso recomiendo leer un libro de C++11 y no de C++98 o (C++03). También existen C++14 y C++17. C++14 es solo una extensión menor de C++11, es decir no han habido muchos cambios. C++17 introduce nuevas características, pero el estándar recién fue publicado en diciembre de 2017, el soporte de estas características en los compiladores todavía es experimental y no hay muchos libros que cubran C++17. De cualquier forma C++17 no se utiliza en el ICPC, pero eso no quiere decir que sea mala idea ir revisándolo.
+Los libros que nombré enseñan C++11. C++11 ha cambiado el lenguaje de forma significante, y por eso recomiendo leer un libro de C++11 y no de C++98 o (C++03). También existen C++14 y C++17. C++14 es solo una extensión menor de C++11, es decir no ha habido muchos cambios. C++17 introduce nuevas características, pero el estándar recién fue publicado en diciembre de 2017, el soporte de estas características en los compiladores todavía es experimental y no hay muchos libros que cubran C++17. De cualquier forma C++17 no se utiliza en el ICPC, claro que eso no quiere decir que sea mala idea ir revisándolo.
 
 Si quieres ver otros recursos revisa estos enlaces:
 
