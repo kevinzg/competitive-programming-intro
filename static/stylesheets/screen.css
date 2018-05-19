@@ -112,8 +112,14 @@
     padding-bottom: 1em;
 }
 
-.content > p {
+.content > h1, .content > h2, .content > h3, .content > h4,
+.content > h5, .content > h6, .content > p, .content > table,
+.content > ul, .content > ol, .content > aside, .content > dl {
     text-shadow: unset;
+}
+
+.content > p code {
+    text-shadow: 0px 1px 0px #fff;
 }
 
 .no-highlight {
