@@ -82,7 +82,7 @@
 }
 
 .content div.spoiler > div code {
-    transition: color .5s ease-in;
+    transition: color .5s ease-in, background-color .5s ease-in;
 }
 
 .content div.spoiler > div:not(:hover) {
@@ -124,4 +124,18 @@
 
 .no-highlight {
     background-color: unset;
+}
+
+@media (max-width: 700px) {
+
+.content pre, .content blockquote, .content figure, .content div.spoiler, .content div.note {
+    width: auto;
+    float: none;
+    margin: 1em 0em;
+}
+
+.content div.highlight+blockquote {
+    margin-top: -1em;
+}
+
 }
